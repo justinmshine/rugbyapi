@@ -1,0 +1,39 @@
+
+.login-header, .login-form {
+    margin: 0 auto; 
+    width:350px;
+}
+
+.login-header {
+    margin-bottom: 30px;
+}
+
+.container ul {
+    list-style: none;
+    display: flex;
+    border: solid 1px;
+}
+
+.container ul li{
+    margin-left: 20px;
+}
+
+.item-single-title div {
+    margin: 10px;
+    margin-left: 20px;
+}
+
+.item-single-title, .item-single {
+    display: flex;
+    border: solid 1px;
+}
+
+.item-single div {
+    margin: 10px;
+    margin-left: 20px;
+    border: solid 1px;
+}
+
+.item-width {
+    width: 200px;
+}
