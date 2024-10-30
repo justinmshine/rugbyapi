@@ -37,3 +37,13 @@
 .item-width {
     width: 200px;
 }
+
+.item-edit button {
+    background-color: orange;
+    color: white;
+}
+
+.item-delete button {
+    background-color: red;
+    color: white;
+}

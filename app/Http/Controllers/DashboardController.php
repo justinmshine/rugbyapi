@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CountryModel;
 use App\Models\DimensionsModel;
+use App\Models\ImagesModel;
 
 class DashboardController extends Controller
 {
@@ -29,5 +30,13 @@ class DashboardController extends Controller
     public function dimensions() {
         $dimensions = DimensionsModel::get();
         return view('dimensions', ['items' => $dimensions]);
+    }
+
+    /**
+     * Display the images index.
+     */
+    public function images() {
+        $images = ImagesModel::get();
+        return view('images', ['items' => $images]);
     }
 }
