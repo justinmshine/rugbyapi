@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\CountryModel;
 use App\Models\DimensionsModel;
 use App\Models\ImagesModel;
+use App\Models\ReviewsModel;
 
 class DashboardController extends Controller
 {
@@ -38,5 +39,13 @@ class DashboardController extends Controller
     public function images() {
         $images = ImagesModel::get();
         return view('images', ['items' => $images]);
+    }
+
+    /**
+     * Display the reviews index.
+     */
+    public function reviews() {
+        $reviews = ReviewsModel::get();
+        return view('reviews', ['items' => $reviews]);
     }
 }
