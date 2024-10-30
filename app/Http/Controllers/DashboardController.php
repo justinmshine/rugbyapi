@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CountryModel;
+use App\Models\DimensionsModel;
 
 class DashboardController extends Controller
 {
@@ -26,6 +27,7 @@ class DashboardController extends Controller
      * Display the dimensions index.
      */
     public function dimensions() {
-        return view('dimensions', []);
+        $dimensions = DimensionsModel::get();
+        return view('dimensions', ['items' => $dimensions]);
     }
 }
