@@ -7,6 +7,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\DimensionsController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\ScanController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +21,7 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
     Route::get('/dimensions', [DashboardController::class, 'dimensions']);
     Route::get('/images', [DashboardController::class, 'images']);
     Route::get('/reviews', [DashboardController::class, 'reviews']);
+    Route::get('/scan', [DashboardController::class, 'scan']);
 
     Route::middleware(['auth'])->prefix('/countries')->group(function() {
         Route::get('/edit/{id}', [CountryController::class, 'edit']);
@@ -43,5 +45,11 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
         Route::get('/edit/{id}', [ReviewsController::class, 'edit']);
         Route::post('/edit/post/{id}', [ReviewsController::class, 'update']);
         Route::get('/delete/{id}', [ReviewsController::class, 'delete']);
+    });
+
+    Route::middleware(['auth'])->prefix('/scan')->group(function() {
+        Route::get('/edit/{id}', [ScanController::class, 'edit']);
+        Route::post('/edit/post/{id}', [ScanController::class, 'update']);
+        Route::get('/delete/{id}', [ScanController::class, 'delete']);
     });
 });

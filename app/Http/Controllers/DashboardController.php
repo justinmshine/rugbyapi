@@ -7,6 +7,7 @@ use App\Models\CountryModel;
 use App\Models\DimensionsModel;
 use App\Models\ImagesModel;
 use App\Models\ReviewsModel;
+use App\Models\ScanModel;
 
 class DashboardController extends Controller
 {
@@ -47,5 +48,13 @@ class DashboardController extends Controller
     public function reviews() {
         $reviews = ReviewsModel::get();
         return view('reviews', ['items' => $reviews]);
+    }
+
+        /**
+     * Display the scan index.
+     */
+    public function scan() {
+        $scan = ScanModel::get();
+        return view('scan', ['items' => $scan]);
     }
 }

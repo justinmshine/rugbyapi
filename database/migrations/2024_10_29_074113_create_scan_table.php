@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('scan', function (Blueprint $table) {
             $table->id();
+            $table->string('bar_code');
+            $table->string('qr_code');
             $table->timestamps();
         });
     }
