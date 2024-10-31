@@ -29,6 +29,8 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
         Route::get('/edit/{id}', [CountryController::class, 'edit']);
         Route::post('/edit/post/{id}', [CountryController::class, 'update']);
         Route::get('/delete/{id}', [CountryController::class, 'delete']);
+        Route::get('/add', [CountryController::class, 'add']);
+        Route::post('/add/post', [CountryController::class, 'insert']);
     });
 
     Route::middleware(['auth'])->prefix('/dimensions')->group(function() {

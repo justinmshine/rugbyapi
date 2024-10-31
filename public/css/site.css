@@ -57,9 +57,13 @@
     color: white;
 }
 
-.item-update {
+.item-add button, .item-update {
     background-color: green;
     color: white;
+}
+
+.shirt-select {
+    width: 205px;
 }
 
 .alert-danger li {
