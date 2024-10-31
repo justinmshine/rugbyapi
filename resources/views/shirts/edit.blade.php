@@ -5,6 +5,15 @@
         <h3>Edit Shirts</h3>
         <div class="items-wrapper">
             Shirt Edit
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form class="edit-country-form" method="post" action="post/{{ $item['id'] }}">
                 @csrf
                 <label for="title">Title:</label><br>
@@ -33,7 +42,7 @@
                 <input id="min_order_quantity" name="min_order_quantity" type="text" value="{{ $item['min_order_quantity'] }}"><br>
                 <label for="thumbnail">Thumbnail:</label><br>
                 <input id="thumbnail" name="thumbnail" type="text" value="{{ $item['thumbnail'] }}"><br><br>
-                <input type="submit" value="Update">
+                <input class="item-update" type="submit" value="Update">
             </form>
         </div>
     </div>

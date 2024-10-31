@@ -21,6 +21,13 @@ class DimensionsController extends Controller
      * Update the dimensions item.
      */
     public function update(Request $request, int $id) {
+        $validatedData = $request->validate([
+            'type' => 'required|string|min:2',
+            'waste' => 'required|integer',
+            'length' => 'required|integer',
+            'chest' => 'required|integer',
+        ]);
+
         $params = $request->all();
         $item = DimensionsModel::findOrFail($id);
         $item->type = $params['type'];

@@ -21,6 +21,11 @@ class ImagesController extends Controller
      * Update the images item.
      */
     public function update(Request $request, int $id) {
+        $validatedData = $request->validate([
+            'title' => 'required|string|min:4',
+            'location' => 'required|string|min:4',
+        ]);
+
         $params = $request->all();
         $item = ImagesModel::findOrFail($id);
         $item->title = $params['title'];

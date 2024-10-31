@@ -21,6 +21,11 @@ class ScanController extends Controller
      * Update the scan item.
      */
     public function update(Request $request, int $id) {
+        $validatedData = $request->validate([
+            'bar_code' => 'required|string|min:4',
+            'qr_code' => 'required|string|min:4',
+        ]);
+
         $params = $request->all();
         $item = ScanModel::findOrFail($id);
         $item->bar_code = $params['bar_code'];

@@ -26,7 +26,7 @@
                 <input id="reviewer_name" name="reviewer_name" type="text" value="{{ $item['reviewer_name'] }}"><br>
                 <label for="reviewer_email">Reviewer Email:</label><br>
                 <input id="reviewer_email" name="reviewer_email" type="text" value="{{ $item['reviewer_email'] }}"><br><br>
-                <input type="submit" value="Update">
+                <input class="item-update" type="submit" value="Update">
             </form>
         </div>
     </div>

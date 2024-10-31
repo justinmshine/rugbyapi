@@ -57,6 +57,11 @@
     color: white;
 }
 
+.item-update {
+    background-color: green;
+    color: white;
+}
+
 .alert-danger li {
     color: red;
 }

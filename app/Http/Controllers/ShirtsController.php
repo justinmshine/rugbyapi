@@ -21,6 +21,14 @@ class ShirtsController extends Controller
      * Update the shirts item.
      */
     public function update(Request $request, int $id) {
+        $validatedData = $request->validate([
+            'title' => 'required|string|min:4',
+            'description' => 'required|string|min:4',
+            'price' => 'decimal:2',
+            'percent_discount' => 'integer',
+            'stock' => 'integer',
+            'min_order_quantity' => 'integer',
+        ]);
         $params = $request->all();
         $item = ShirtsModel::findOrFail($id);
         $item->title = isset($params['title']) ? $params['title'] : '';

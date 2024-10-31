@@ -21,6 +21,12 @@ class CountryController extends Controller
      * Update the country item.
      */
     public function update(Request $request, int $id) {
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:3',
+            'capital' => 'required|string|min:3',
+            'iso' => 'required|string|min:2',
+        ]);
+
         $params = $request->all();
         $item = CountryModel::findOrFail($id);
         $item->name = $params['name'];
