@@ -11,7 +11,7 @@
                 <input id="bar_code" name="bar_code" type="text" value="{{ $item['bar_code'] }}"><br>
                 <label for="qr_code">QR Code:</label><br>
                 <input id="qr_code" name="qr_code" type="text" value="{{ $item['qr_code'] }}"><br><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Update">
             </form>
         </div>
     </div>

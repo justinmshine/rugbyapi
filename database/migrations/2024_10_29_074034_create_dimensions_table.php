@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('waste');
             $table->integer('length');
             $table->integer('chest');
+            $table->bigInteger('shirt_id')->unsigned()->index()->nullable();
+            $table->foreign('shirt_id')->references('id')->on('shirts')->onDelete('cascade');
             $table->timestamps();
         });
     }

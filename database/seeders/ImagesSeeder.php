@@ -17,11 +17,13 @@ class ImagesSeeder extends Seeder
             [
                 'title' => 'Ireland',
                 'location' => '/images/ireland.jpg',
+                'shirt_id' => 6, 
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),
             ], 
             [
                 'title' => 'Japan',
+                'shirt_id' => 7, 
                 'location' => '/images/japan.jpg',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),

@@ -13,7 +13,7 @@
                 <input id="capital" name="capital" type="text" value="{{ $item['capital_city'] }}"><br>
                 <label for="iso">ISO Code:</label><br>
                 <input id="iso" name="iso" type="text" value="{{ $item['iso_code'] }}"><br><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Update">
             </form>
         </div>
     </div>

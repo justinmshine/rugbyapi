@@ -18,6 +18,8 @@ return new class extends Migration
             $table->timestamp('added_at', precision: 0);
             $table->string('reviewer_name');
             $table->string('reviewer_email');
+            $table->bigInteger('shirt_id')->unsigned()->index()->nullable();
+            $table->foreign('shirt_id')->references('id')->on('shirts')->onDelete('cascade');
             $table->timestamps();
         });
     }

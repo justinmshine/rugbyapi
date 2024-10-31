@@ -5,7 +5,7 @@
         <h3>Reviews</h3>
         <div class="items-wrapper">
             <div class="item-single-title">
-                <div class="item-rating item-width">Rating</div>
+                <div class="item-rating item-width-numeric">Rating</div>
                 <div class="item-comment item-width">Comment</div>
                 <div class="item-added-at item-width">Added At</div>
                 <div class="item-reviewer-name item-width">Reviewer Name</div>
@@ -13,7 +13,7 @@
             </div>
             @foreach($items as $out)
                 <div class="item-single">
-                    <div class="item-rating item-width">{{ $out->rating }}</div>
+                    <div class="item-rating item-width-numeric">{{ $out->rating }}</div>
                     <div class="item-comment item-width">{{ $out->comment }}</div>
                     <div class="item-added-at item-width">{{ $out->added_at }}</div>
                     <div class="item-reviewer-name item-width">{{ $out->reviewer_name }}</div>

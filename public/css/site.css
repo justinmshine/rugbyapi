@@ -35,8 +35,17 @@
 }
 
 .item-width {
-    width: 200px;
+    width: 130px;
 }
+
+.item-width-numeric {
+    width: 40px;
+}
+
+.item-width-scan {
+    width: 160px;
+}
+
 
 .item-edit button {
     background-color: orange;
@@ -46,4 +55,8 @@
 .item-delete button {
     background-color: red;
     color: white;
+}
+
+.alert-danger li {
+    color: red;
 }

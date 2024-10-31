@@ -8,6 +8,7 @@ use App\Models\DimensionsModel;
 use App\Models\ImagesModel;
 use App\Models\ReviewsModel;
 use App\Models\ScanModel;
+use App\Models\ShirtsModel;
 
 class DashboardController extends Controller
 {
@@ -50,11 +51,19 @@ class DashboardController extends Controller
         return view('reviews', ['items' => $reviews]);
     }
 
-        /**
+    /**
      * Display the scan index.
      */
     public function scan() {
         $scan = ScanModel::get();
         return view('scan', ['items' => $scan]);
+    }
+
+    /**
+     * Display the shirts index.
+     */
+    public function shirts() {
+        $shirts = ShirtsModel::get();
+        return view('shirts', ['items' => $shirts]);
     }
 }

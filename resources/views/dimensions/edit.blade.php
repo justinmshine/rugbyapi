@@ -15,7 +15,7 @@
                 <input id="length" name="length" type="text" value="{{ $item['length'] }}"><br>
                 <label for="chest">Chest:</label><br>
                 <input id="chest" name="chest" type="text" value="{{ $item['chest'] }}"><br><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Update">
             </form>
         </div>
     </div>

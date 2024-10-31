@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('category');
             $table->double('price');
             $table->integer('percent_discount');
-            $table->integer('rating');
             $table->integer('stock');
             $table->string('sku');
             $table->string('warranty');
@@ -27,16 +26,6 @@ return new class extends Migration
             $table->string('return_policy');
             $table->integer('min_order_quantity');
             $table->string('thumbnail');
-            $table->bigInteger('country_id')->unsigned()->index();
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
-            $table->bigInteger('dimensions_id')->unsigned()->index();
-            $table->foreign('dimensions_id')->references('id')->on('dimensions')->onDelete('cascade');
-            $table->bigInteger('review_id')->unsigned()->index();
-            $table->foreign('review_id')->references('id')->on('reviews')->onDelete('cascade');
-            $table->bigInteger('scan_id')->unsigned()->index();
-            $table->foreign('scan_id')->references('id')->on('scan')->onDelete('cascade');
-            $table->bigInteger('image_id')->unsigned()->index();
-            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('location');
+            $table->bigInteger('shirt_id')->unsigned()->index()->nullable();
+            $table->foreign('shirt_id')->references('id')->on('shirts')->onDelete('cascade');
             $table->timestamps();
         });
     }

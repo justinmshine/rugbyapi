@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('capital_city');
             $table->string('iso_code');
+            $table->bigInteger('shirt_id')->unsigned()->index()->nullable();
+            $table->foreign('shirt_id')->references('id')->on('shirts')->onDelete('cascade');
             $table->timestamps();
         });
     }

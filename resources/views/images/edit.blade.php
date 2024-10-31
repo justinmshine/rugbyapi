@@ -11,7 +11,7 @@
                 <input id="title" name="title" type="text" value="{{ $item['title'] }}"><br>
                 <label for="location">Location:</label><br>
                 <input id="location" name="location" type="text" value="{{ $item['location'] }}"><br><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Update">
             </form>
         </div>
     </div>

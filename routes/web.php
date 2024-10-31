@@ -8,6 +8,7 @@ use App\Http\Controllers\DimensionsController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ScanController;
+use App\Http\Controllers\ShirtsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,6 +23,7 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
     Route::get('/images', [DashboardController::class, 'images']);
     Route::get('/reviews', [DashboardController::class, 'reviews']);
     Route::get('/scan', [DashboardController::class, 'scan']);
+    Route::get('/shirts', [DashboardController::class, 'shirts']);
 
     Route::middleware(['auth'])->prefix('/countries')->group(function() {
         Route::get('/edit/{id}', [CountryController::class, 'edit']);
@@ -51,5 +53,11 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
         Route::get('/edit/{id}', [ScanController::class, 'edit']);
         Route::post('/edit/post/{id}', [ScanController::class, 'update']);
         Route::get('/delete/{id}', [ScanController::class, 'delete']);
+    });
+
+    Route::middleware(['auth'])->prefix('/shirts')->group(function() {
+        Route::get('/edit/{id}', [ShirtsController::class, 'edit']);
+        Route::post('/edit/post/{id}', [ShirtsController::class, 'update']);
+        Route::get('/delete/{id}', [ShirtsController::class, 'delete']);
     });
 });

@@ -21,6 +21,14 @@ class ReviewsController extends Controller
      * Update the reviews item.
      */
     public function update(Request $request, int $id) {
+        $validatedData = $request->validate([
+            'rating' => 'required|integer|digits_between:1,10',
+            'comment' => 'required|string|min:4',
+            'added_at' => 'date',
+            'reviewer_name' => 'required|string|min:4',
+            'reviewer_email' => 'required|string|min:4',
+        ]);
+
         $params = $request->all();
         $item = ReviewsModel::findOrFail($id);
         $item->rating = $params['rating'];
