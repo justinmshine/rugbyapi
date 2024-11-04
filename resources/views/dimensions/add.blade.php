@@ -2,7 +2,7 @@
     <div class="">
         <h1>Shine Rugby Shirts CMS</h1>
         @include('includes/menu')
-        <h3>Edit Dimensions</h3>
+        <h3>Add New Dimension</h3>
         <div class="items-wrapper">
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -13,22 +13,22 @@
                     </ul>
                 </div>
             @endif
-            <form class="edit-dimensions-form" method="post" action="post/{{ $item['id'] }}">
+            <form class="add-dimension-form" method="post" action="add/post">
                 @csrf
                 <label for="type">Type:</label><br>
-                <input id="type" name="type" type="text" value="{{ $item['type'] }}"><br><br>
+                <input id="type" name="type" type="text"><br><br>
                 <label for="waste">Waste:</label><br>
-                <input id="waste" name="waste" type="text" value="{{ $item['waste'] }}"><br><br>
+                <input id="waste" name="waste" type="text"><br><br>
                 <label for="length">Length:</label><br>
-                <input id="length" name="length" type="text" value="{{ $item['length'] }}"><br><br>
+                <input id="length" name="length" type="text"><br><br>
                 <label for="chest">Chest:</label><br>
-                <input id="chest" name="chest" type="text" value="{{ $item['chest'] }}"><br><br>
+                <input id="chest" name="chest" type="text"><br><br>
                 <select name="shirt_id" id="shirt_id" class="shirt-select">
-                    @foreach($items as $out)
-                        <option @if($item['shirt_id'] == $out['id']) selected="selected" @endif value="{{ $out['id'] }}">{{ $out['title'] }}</option>
+                    @foreach($items as $item)
+                        <option value="{{ $item['id'] }}">{{ $item['title'] }}</option>
                     @endforeach
                 </select><br><br>
-                <input class="item-update" type="submit" value="Update">
+                <input class="item-insert" type="submit" value="Insert">
             </form>
         </div>
     </div>

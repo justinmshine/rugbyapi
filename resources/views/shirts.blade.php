@@ -38,6 +38,8 @@
                     <div class="item-delete"><a href="{{ url('/') }}/dashboard/shirts/delete/{{ $out->id }}" onclick="return confirm('Are you sure?')"><button type="button">Delete!</button></a></div>
                 </div>
             @endforeach
+            <br><br>
+            <div class="item-add"><a href="{{ url('/') }}/dashboard/shirts/add"><button type="button">Add!</button></a></div>
         </div>
     </div>
 @include('includes/footer')

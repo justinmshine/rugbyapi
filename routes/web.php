@@ -37,29 +37,39 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
         Route::get('/edit/{id}', [DimensionsController::class, 'edit']);
         Route::post('/edit/post/{id}', [DimensionsController::class, 'update']);
         Route::get('/delete/{id}', [DimensionsController::class, 'delete']);
+        Route::get('/add', [DimensionsController::class, 'add']);
+        Route::post('/add/post', [DimensionsController::class, 'insert']);
     });
 
     Route::middleware(['auth'])->prefix('/images')->group(function() {
         Route::get('/edit/{id}', [ImagesController::class, 'edit']);
         Route::post('/edit/post/{id}', [ImagesController::class, 'update']);
         Route::get('/delete/{id}', [ImagesController::class, 'delete']);
+        Route::get('/add', [ImagesController::class, 'add']);
+        Route::post('/add/post', [ImagesController::class, 'insert']);
     });
 
     Route::middleware(['auth'])->prefix('/reviews')->group(function() {
         Route::get('/edit/{id}', [ReviewsController::class, 'edit']);
         Route::post('/edit/post/{id}', [ReviewsController::class, 'update']);
         Route::get('/delete/{id}', [ReviewsController::class, 'delete']);
+        Route::get('/add', [ReviewsController::class, 'add']);
+        Route::post('/add/post', [ReviewsController::class, 'insert']);
     });
 
     Route::middleware(['auth'])->prefix('/scan')->group(function() {
         Route::get('/edit/{id}', [ScanController::class, 'edit']);
         Route::post('/edit/post/{id}', [ScanController::class, 'update']);
         Route::get('/delete/{id}', [ScanController::class, 'delete']);
+        Route::get('/add', [ScanController::class, 'add']);
+        Route::post('/add/post', [ScanController::class, 'insert']);
     });
 
     Route::middleware(['auth'])->prefix('/shirts')->group(function() {
         Route::get('/edit/{id}', [ShirtsController::class, 'edit']);
         Route::post('/edit/post/{id}', [ShirtsController::class, 'update']);
         Route::get('/delete/{id}', [ShirtsController::class, 'delete']);
+        Route::get('/add', [ShirtsController::class, 'add']);
+        Route::post('/add/post', [ShirtsController::class, 'insert']);
     });
 });

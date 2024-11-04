@@ -2,7 +2,7 @@
     <div class="">
         <h1>Shine Rugby Shirts CMS</h1>
         @include('includes/menu')
-        <h3>Edit Scans</h3>
+        <h3>Add New Scan</h3>
         <div class="items-wrapper">
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -13,18 +13,18 @@
                     </ul>
                 </div>
             @endif
-            <form class="edit-country-form" method="post" action="post/{{ $item['id'] }}">
+            <form class="add-scan-form" method="post" action="add/post">
                 @csrf
                 <label for="bar_code">Bar Code:</label><br>
-                <input id="bar_code" name="bar_code" type="text" value="{{ $item['bar_code'] }}"><br><br>
+                <input id="bar_code" name="bar_code" type="text"><br><br>
                 <label for="qr_code">QR Code:</label><br>
-                <input id="qr_code" name="qr_code" type="text" value="{{ $item['qr_code'] }}"><br><br>
+                <input id="qr_code" name="qr_code" type="text"><br><br>
                 <select name="shirt_id" id="shirt_id" class="shirt-select">
-                    @foreach($items as $out)
-                        <option @if($item['shirt_id'] == $out['id']) selected="selected" @endif value="{{ $out['id'] }}">{{ $out['title'] }}</option>
+                    @foreach($items as $item)
+                        <option value="{{ $item['id'] }}">{{ $item['title'] }}</option>
                     @endforeach
                 </select><br><br>
-                <input class="item-update" type="submit" value="Update">
+                <input class="item-insert" type="submit" value="Insert">
             </form>
         </div>
     </div>

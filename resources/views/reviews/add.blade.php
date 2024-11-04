@@ -2,7 +2,7 @@
     <div class="">
         <h1>Shine Rugby Shirts CMS</h1>
         @include('includes/menu')
-        <h3>Edit Reviews</h3>
+        <h3>Add New Review</h3>
         <div class="items-wrapper">
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -13,24 +13,24 @@
                     </ul>
                 </div>
             @endif
-            <form class="edit-country-form" method="post" action="post/{{ $item['id'] }}">
+            <form class="add-review-form" method="post" action="add/post">
                 @csrf
                 <label for="rating">Rating:</label><br>
-                <input id="rating" name="rating" type="text" value="{{ $item['rating'] }}"><br><br>
+                <input id="rating" name="rating" type="text"><br><br>
                 <label for="comment">Comment:</label><br>
-                <input id="comment" name="comment" type="text" value="{{ $item['comment'] }}"><br><br>
+                <input id="comment" name="comment" type="text"><br><br>
                 <label for="added_at">Added At:</label><br>
-                <input id="added_at" name="added_at" type="date" value="{{\Illuminate\Support\Carbon::parse($item['added_at'])->format('Y-m-d')}}"><br><br>
+                <input id="added_at" name="added_at" type="date"><br><br>
                 <label for="reviewer_name">Reviewer Name:</label><br>
-                <input id="reviewer_name" name="reviewer_name" type="text" value="{{ $item['reviewer_name'] }}"><br><br>
+                <input id="reviewer_name" name="reviewer_name" type="text"><br><br>
                 <label for="reviewer_email">Reviewer Email:</label><br>
-                <input id="reviewer_email" name="reviewer_email" type="text" value="{{ $item['reviewer_email'] }}"><br><br>
+                <input id="reviewer_email" name="reviewer_email" type="text"><br><br>
                 <select name="shirt_id" id="shirt_id" class="shirt-select">
-                    @foreach($items as $out)
-                        <option @if($item['shirt_id'] == $out['id']) selected="selected" @endif value="{{ $out['id'] }}">{{ $out['title'] }}</option>
+                    @foreach($items as $item)
+                        <option value="{{ $item['id'] }}">{{ $item['title'] }}</option>
                     @endforeach
                 </select><br><br>
-                <input class="item-update" type="submit" value="Update">
+                <input class="item-insert" type="submit" value="Insert">
             </form>
         </div>
     </div>

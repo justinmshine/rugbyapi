@@ -2,7 +2,7 @@
     <div class="">
         <h1>Shine Rugby Shirts CMS</h1>
         @include('includes/menu')
-        <h3>Edit Images</h3>
+        <h3>Add New Image</h3>
         <div class="items-wrapper">
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -13,18 +13,18 @@
                     </ul>
                 </div>
             @endif
-            <form class="edit-country-form" method="post" action="post/{{ $item['id'] }}">
+            <form class="add-image-form" method="post" action="add/post">
                 @csrf
                 <label for="title">Title:</label><br>
-                <input id="title" name="title" type="text" value="{{ $item['title'] }}"><br><br>
+                <input id="title" name="title" type="text"><br><br>
                 <label for="location">Location:</label><br>
-                <input id="location" name="location" type="text" value="{{ $item['location'] }}"><br><br>
+                <input id="location" name="location" type="text"><br><br>
                 <select name="shirt_id" id="shirt_id" class="shirt-select">
-                    @foreach($items as $out)
-                        <option @if($item['shirt_id'] == $out['id']) selected="selected" @endif value="{{ $out['id'] }}">{{ $out['title'] }}</option>
+                    @foreach($items as $item)
+                        <option value="{{ $item['id'] }}">{{ $item['title'] }}</option>
                     @endforeach
                 </select><br><br>
-                <input class="item-update" type="submit" value="Update">
+                <input class="item-insert" type="submit" value="Insert">
             </form>
         </div>
     </div>
