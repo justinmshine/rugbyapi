@@ -25,8 +25,6 @@
                 <input id="price" name="price" type="text"><br><br>
                 <label for="percent_discount">Percentage Discount:</label><br>
                 <input id="percent_discount" name="percent_discount" type="text"><br><br>
-                <label for="stock">Stock:</label><br>
-                <input id="stock" name="stock" type="text"><br><br>
                 <label for="sku">Sku:</label><br>
                 <input id="sku" name="sku" type="text"><br><br>
                 <label for="warranty">Warranty:</label><br>

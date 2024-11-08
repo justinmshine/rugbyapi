@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('category');
             $table->double('price');
             $table->integer('percent_discount');
-            $table->integer('stock');
             $table->string('sku');
             $table->string('warranty');
             $table->string('shipping');

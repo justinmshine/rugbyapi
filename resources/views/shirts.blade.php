@@ -10,7 +10,6 @@
                 <div class="item-category item-width">Category</div>
                 <div class="item-price item-width-numeric">Price</div>
                 <div class="item-percentage-discount item-width-numeric">Percentage Discount</div>
-                <div class="item-stock item-width-numeric">Stock</div>
                 <div class="item-sku item-width">Sku</div>
                 <div class="item-warranty item-width">Warranty</div>
                 <div class="item-shipping item-width">Shipping</div>
@@ -26,7 +25,6 @@
                     <div class="item-category item-width">{{ $out->category }}</div>
                     <div class="item-price item-width-numeric">{{ $out->price }}</div>
                     <div class="item-percentage-discount item-width-numeric">{{ $out->percentage_discount }}</div>
-                    <div class="item-stock item-width-numeric">{{ $out->stock }}</div>
                     <div class="item-sku item-width">{{ $out->sku }}</div>
                     <div class="item-warranty item-width">{{ $out->warranty }}</div>
                     <div class="item-shipping item-width">{{ $out->shipping }}</div>

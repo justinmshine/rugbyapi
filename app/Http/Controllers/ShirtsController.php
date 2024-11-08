@@ -26,7 +26,6 @@ class ShirtsController extends Controller
             'description' => 'required|string|min:4',
             'price' => 'decimal:2',
             'percent_discount' => 'integer',
-            'stock' => 'integer',
             'min_order_quantity' => 'integer',
         ]);
         $params = $request->all();
@@ -36,7 +35,6 @@ class ShirtsController extends Controller
         $item->category = isset($params['category']) ? $params['category'] : '';
         $item->price = isset($params['price']) ? $params['price'] : 0;
         $item->percent_discount = isset($params['percent_discount']) ? $params['percent_discount'] : 0;
-        $item->stock = isset($params['stock']) ? $params['stock'] : 0;
         $item->sku = isset($params['sku']) ? $params['sku'] : '';
         $item->warranty = isset($params['warranty']) ? $params['warranty'] : '';
         $item->shipping = isset($params['shipping']) ? $params['shipping'] : '';
@@ -93,7 +91,6 @@ class ShirtsController extends Controller
         $item->category = isset($params['category']) ? $params['category'] : '';
         $item->price = isset($params['price']) ? $params['price'] : 0;
         $item->percent_discount = isset($params['percent_discount']) ? $params['percent_discount'] : 0;
-        $item->stock = isset($params['stock']) ? $params['stock'] : 0;
         $item->sku = isset($params['sku']) ? $params['sku'] : '';
         $item->warranty = isset($params['warranty']) ? $params['warranty'] : '';
         $item->shipping = isset($params['shipping']) ? $params['shipping'] : '';
