@@ -4,6 +4,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/dashboard">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/dashboard/countries">Countries</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/dashboard/dimensions">Dimensions</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/dashboard/stock">Stock</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/dashboard/images">Images</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/dashboard/reviews">Reviews</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/dashboard/scan">Scan</a></li>

@@ -9,6 +9,7 @@ use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ScanController;
 use App\Http\Controllers\ShirtsController;
+use App\Http\Controllers\StockController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +21,7 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
     Route::get('/', [DashboardController::class, 'index']);
     Route::get('/countries', [DashboardController::class, 'countries']);
     Route::get('/dimensions', [DashboardController::class, 'dimensions']);
+    Route::get('/stock', [DashboardController::class, 'stock']);
     Route::get('/images', [DashboardController::class, 'images']);
     Route::get('/reviews', [DashboardController::class, 'reviews']);
     Route::get('/scan', [DashboardController::class, 'scan']);
@@ -71,5 +73,13 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
         Route::get('/delete/{id}', [ShirtsController::class, 'delete']);
         Route::get('/add', [ShirtsController::class, 'add']);
         Route::post('/add/post', [ShirtsController::class, 'insert']);
+    });
+
+    Route::middleware(['auth'])->prefix('/stock')->group(function() {
+        Route::get('/edit/{id}', [StockController::class, 'edit']);
+        Route::post('/edit/post/{id}', [StockController::class, 'update']);
+        Route::get('/delete/{id}', [StockController::class, 'delete']);
+        Route::get('/add', [StockController::class, 'add']);
+        Route::post('/add/post', [StockController::class, 'insert']);
     });
 });

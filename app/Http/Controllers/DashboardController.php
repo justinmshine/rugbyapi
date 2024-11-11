@@ -9,6 +9,7 @@ use App\Models\ImagesModel;
 use App\Models\ReviewsModel;
 use App\Models\ScanModel;
 use App\Models\ShirtsModel;
+use App\Models\StockModel;
 
 class DashboardController extends Controller
 {
@@ -33,6 +34,21 @@ class DashboardController extends Controller
     public function dimensions() {
         $dimensions = DimensionsModel::get();
         return view('dimensions', ['items' => $dimensions]);
+    }
+
+   /**
+     * Display the stock index.
+     */
+    public function stock() {
+        $shirts = ShirtsModel::get();
+        $country = $shirts->map(function ($shirt) {
+            return collect($shirt->toArray())
+                ->only(['id', 'title'])
+                ->all();
+        });
+        $dimensions = DimensionsModel::get();
+        $stock = StockModel::get();
+        return view('stock', ['items' => $stock, 'country' => $country, 'size' => $dimensions]);
     }
 
     /**
