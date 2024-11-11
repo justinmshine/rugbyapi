@@ -66,8 +66,9 @@ class StockController extends Controller
                 ->only(['id', 'title'])
                 ->all();
         });
+        $dimensions = DimensionsModel::get();
 
-        return view('stock/add', ['items' => $items]);
+        return view('stock/add', ['items' => $items, 'size' => $dimensions]);
     }
 
     /**
@@ -75,18 +76,22 @@ class StockController extends Controller
      */
     public function insert(Request $request) {
         $validatedData = $request->validate([
-            'name' => 'required|string|min:3',
-            'capital' => 'required|string|min:3',
-            'iso' => 'required|string|min:2',
+            'stock' => 'required|numeric',
+            'size_id' => 'required|numeric',
+            'shirt_id' => 'required|numeric',
         ]);
 
         $params = $request->all();
-        $item = StockModel::make();
-        $item->stock = $params['stock'];
-        $item->capital_city = $params['capital'];
-        $item->iso_code = $params['iso'];
-        $item->shirt_id = $params['shirt_id'];
-        $item->save();
+        if (StockModel::where([['size_id', '=', $params['size_id']], ['shirt_id', '=', $params['shirt_id']]])->exists()) {
+            return Redirect::back()->withErrors(['message' => 'Stock for this shirt already exists. Update the current data!!!']);
+        }
+        else {
+            $item = StockModel::make();
+            $item->stock = $params['stock'];
+            $item->size_id = $params['size_id'];
+            $item->shirt_id = $params['shirt_id'];
+            $item->save();
+        }
         return Redirect::to('dashboard/stock')->with('message','Operation Successful !');
     }
 }

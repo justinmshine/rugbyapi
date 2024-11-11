@@ -57,7 +57,7 @@
     color: white;
 }
 
-.item-add button, .item-update {
+.item-add button, .item-update, .item-insert {
     background-color: green;
     color: white;
 }
