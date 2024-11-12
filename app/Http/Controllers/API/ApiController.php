@@ -8,6 +8,7 @@ use App\Models\ShirtsModel;
 use Validator;
 use App\Http\Resources\ShirtsResource;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
    
 class ApiController extends BaseController
 {
@@ -20,6 +21,14 @@ class ApiController extends BaseController
     {
         $shirts = ShirtsModel::all();
     
+        foreach($shirts as $shirt) {
+            $single = ShirtsModel::find($shirt->id);
+            $shirt->country = $single->country;
+            $shirt->image = $single->image;
+            $shirt->stock = $single->dimensions;
+            Log::info($shirt);
+        }
+
         return $this->sendResponse(ShirtsResource::collection($shirts), 'Products retrieved successfully.');
     }
 }

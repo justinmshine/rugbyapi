@@ -83,7 +83,7 @@ class StockController extends Controller
 
         $params = $request->all();
         if (StockModel::where([['size_id', '=', $params['size_id']], ['shirt_id', '=', $params['shirt_id']]])->exists()) {
-            return Redirect::back()->withErrors(['message' => 'Stock for this shirt already exists. Update the current data!!!']);
+            return Redirect::back()->withErrors(['message' => 'Stock for this shirt and size already exists. Update the current data!!!']);
         }
         else {
             $item = StockModel::make();
