@@ -29,7 +29,7 @@ class ShirtsSeeder extends Seeder
                 'thumbnail' => '',
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s"),
-            ], 
+            ],
             [
                 'title' => 'Australia',
                 'description' => 'The Wallabies',

@@ -29,7 +29,7 @@ class ShirtsModel extends Model
     /**
      * Get the stock dimensions with the shirt.
      */
-    public function dimensions(): HasMany
+    public function stock(): HasMany
     {
         return $this->hasMany(StockModel::class, 'shirt_id');
     }

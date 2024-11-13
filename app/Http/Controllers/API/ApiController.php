@@ -25,7 +25,7 @@ class ApiController extends BaseController
             $single = ShirtsModel::find($shirt->id);
             $shirt->country = $single->country;
             $shirt->image = $single->image;
-            $shirt->stock = $single->dimensions;
+            $shirt->stock = $single->stock;
             Log::info($shirt);
         }
 

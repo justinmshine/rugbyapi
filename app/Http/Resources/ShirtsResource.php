@@ -16,7 +16,7 @@ class ShirtsResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->title,
+            'title' => $this->title,
             'detail' => $this->description,
             'price' => $this->price,
             'country' => $this->country,
