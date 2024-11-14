@@ -35,6 +35,14 @@ class ShirtsModel extends Model
     }
 
     /**
+     * Get the size dimensions with the shirt.
+     */
+    public function dimensions(): HasMany
+    {
+        return $this->hasMany(DimensionsModel::class, 'shirt_id');
+    }
+
+    /**
      * Get the reviews associated with the shirt.
      */
     public function reviews(): HasMany

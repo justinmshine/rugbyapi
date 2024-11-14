@@ -41,7 +41,6 @@ class DimensionsController extends Controller
         $item->waste = $params['waste'];
         $item->length = $params['length'];
         $item->chest = $params['chest'];
-        $item->shirt_id = $params['shirt_id'];
         $item->save();
         return Redirect::back()->with('message','Operation Successful !');
     }
@@ -88,7 +87,6 @@ class DimensionsController extends Controller
         $item->waste = $params['waste'];
         $item->length = $params['length'];
         $item->chest = $params['chest'];
-        $item->shirt_id = $params['shirt_id'];
         $item->save();
         return Redirect::to('dashboard/dimensions')->with('message','Operation Successful !');
     }

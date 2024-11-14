@@ -22,6 +22,7 @@ class ShirtsResource extends JsonResource
             'country' => $this->country,
             'image' => $this->image,
             'stock' => $this->stock,
+            'dimension' => $this->dimensions,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
         ];
