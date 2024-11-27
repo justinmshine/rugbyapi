@@ -22,7 +22,7 @@ return new class extends Migration
             $table->bigInteger('phone');
             $table->string('email');
             $table->bigInteger('card');
-            $table->integer('expires');
+            $table->string('expires');
             $table->integer('cvc');
             $table->timestamps();
         });
