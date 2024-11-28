@@ -7,6 +7,7 @@ use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\ShirtsModel;
 use App\Models\DimensionsModel;
 use App\Models\SalesModel;
+use App\Models\StockModel;
 use Validator;
 use App\Http\Resources\ShirtsResource;
 use Illuminate\Http\JsonResponse;
@@ -64,6 +65,12 @@ class ApiController extends BaseController
         }
 
         SalesModel::create($input);
+        $sales = json_decode($input['sales'], true);
+        foreach($sales as $sale) {
+            $stock = StockModel::where([['shirt_id', '=', $sale['id']], ['size_id', '=', $sale['type']]])->first();
+            $stock->stock = $stock->stock - $sale['quantity'];
+            $stock->save();
+        }
 
         return $this->sendResponse($input, 'Sale created successfully.');
     }
