@@ -10,6 +10,7 @@ use App\Models\ReviewsModel;
 use App\Models\ScanModel;
 use App\Models\ShirtsModel;
 use App\Models\StockModel;
+use App\Models\SalesModel;
 
 class DashboardController extends Controller
 {
@@ -81,5 +82,31 @@ class DashboardController extends Controller
     public function shirts() {
         $shirts = ShirtsModel::get();
         return view('shirts', ['items' => $shirts]);
+    }
+
+    /**
+     * Display the sales index.
+     */
+    public function sales() {
+        $sales = SalesModel::orderBy('created_at', 'DESC')->get();
+
+        foreach($sales as $sale) {
+            $records = json_decode($sale->sales, true);
+            $breakdown = [];
+            $total = 0;
+            foreach($records as $key => $record) {
+                $dimension = DimensionsModel::findOrFail($record['type']);
+                $attributes = $dimension->getAttributes();
+                $breakdown[$key]['title'] = $record['product']['title'];
+                $breakdown[$key]['quantity'] = $record['quantity'];
+                $breakdown[$key]['type'] = $attributes['type'];
+                $breakdown[$key]['price'] = $record['price'];
+                $total += $record['price'] * $record['quantity'];
+            }
+            $sale->breakdown = $breakdown;
+            $sale->total = $total;
+        }
+
+        return view('sales', ['items' => $sales]);
     }
 }
