@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('country');
             $table->bigInteger('phone');
             $table->string('email');
-            $table->string('sales');
+            $table->longText('sales');
             $table->bigInteger('card');
             $table->string('expires');
             $table->integer('cvc');
