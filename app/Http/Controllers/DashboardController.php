@@ -11,6 +11,7 @@ use App\Models\ScanModel;
 use App\Models\ShirtsModel;
 use App\Models\StockModel;
 use App\Models\SalesModel;
+use App\Models\DrawModel;
 
 class DashboardController extends Controller
 {
@@ -108,5 +109,13 @@ class DashboardController extends Controller
         }
 
         return view('sales', ['items' => $sales]);
+    }
+
+    /**
+     * Display the prize draw entrants.
+     */
+    public function prizedraw() {
+        $prize = DrawModel::get();
+        return view('prizedraw', ['items' => $prize]);
     }
 }

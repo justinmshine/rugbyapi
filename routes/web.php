@@ -27,6 +27,7 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
     Route::get('/scan', [DashboardController::class, 'scan']);
     Route::get('/shirts', [DashboardController::class, 'shirts']);
     Route::get('/sales', [DashboardController::class, 'sales']);
+    Route::get('/prizedraw', [DashboardController::class, 'prizedraw']);
 
     Route::middleware(['auth'])->prefix('/countries')->group(function() {
         Route::get('/edit/{id}', [CountryController::class, 'edit']);
