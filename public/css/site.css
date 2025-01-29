@@ -75,13 +75,13 @@
 }
 
 .item-result-gold {
-    color: gold;
+    background-color: gold;
 }
 
 .item-result-silver {
-    color: silver;
+    background-color: silver;
 }
 
 .item-result-bronze {
-    color: #CD7F32;
+    background-color: #CD7F32;
 }
