@@ -10,6 +10,7 @@ use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\ScanController;
 use App\Http\Controllers\ShirtsController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\DrawController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -84,4 +85,8 @@ Route::middleware(['auth'])->prefix('/dashboard')->group(function() {
         Route::get('/add', [StockController::class, 'add']);
         Route::post('/add/post', [StockController::class, 'insert']);
     });
+});
+
+Route::middleware(['auth'])->prefix('/prizedraw')->group(function() {
+    Route::post('/rundraw', [DrawController::class, 'rundraw']);
 });

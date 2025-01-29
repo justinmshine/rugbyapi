@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('country');
             $table->bigInteger('phone');
             $table->string('email');
+            $table->integer('result')->nullable();
             $table->timestamps();
         });
     }

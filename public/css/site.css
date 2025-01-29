@@ -69,3 +69,19 @@
 .alert-danger li {
     color: red;
 }
+
+.prize-draw-form {
+    margin-bottom: 20px;
+}
+
+.item-result-gold {
+    color: gold;
+}
+
+.item-result-silver {
+    color: silver;
+}
+
+.item-result-bronze {
+    color: #CD7F32;
+}
